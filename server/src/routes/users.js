@@ -25,7 +25,24 @@ router.post("/register", async (req, res) => {
 });
 
 //post request /login
-router.post("/login");
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  const user = await UserModel.findOne({ username });
+
+  if (!user) {
+    return res.json({message: "User does not exists!"});
+  }
+
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+
+  if (!isPasswordValid) {
+    return res.json({message: "Username or Password Is Invalid"});
+  }
+
+  const jwtSecret = process.env.JWT_SECRET
+  const token = jwt.sign({ id: user._id }, jwtSecret);
+  res.json({ token, userID: user._id })
+});
 
 
 
