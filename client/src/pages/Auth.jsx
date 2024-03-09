@@ -38,9 +38,10 @@ const Register = () => {
           username,
           password,
         });
-      alert("Reg");
+      alert("Registration done!");
     } catch (err) {
-      console.error(err);
+      alert("error has been found! ");
+      console.error(err)
     }
   };
 
