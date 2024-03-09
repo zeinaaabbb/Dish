@@ -13,7 +13,7 @@ router.post("/register", async (req, res) => {
   const user = await UserModel.findOne({ username });
   //Check if User Exists
   if (user) {
-    return res.json({message: "User already exists!"});
+    return res.status(400).json({message: "User already exists!"});
   }
   //Hash Password:
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -30,13 +30,13 @@ router.post("/login", async (req, res) => {
   const user = await UserModel.findOne({ username });
 
   if (!user) {
-    return res.json({message: "User does not exists!"});
+    return res.status(400).json({message: "User does not exists!"});
   }
 
   const isPasswordValid = await bcrypt.compare(password, user.password);
 
   if (!isPasswordValid) {
-    return res.json({message: "Username or Password Is Invalid"});
+    return res.status(400).json({message: "Username or Password Is Invalid"});
   }
 
   const jwtSecret = process.env.JWT_SECRET
