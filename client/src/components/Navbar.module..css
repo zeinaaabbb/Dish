@@ -1,0 +1,11 @@
+.navbar{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navLink {
+  margin-top: 10px;
+  color: #3759CD;
+  text-decoration: none;
+  font-family:  "Outfit", sans-serif;
+}
