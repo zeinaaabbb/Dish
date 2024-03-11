@@ -1,6 +1,6 @@
 function SavedRecipe() {
   return (
-    <div>Saved Recipe</div>
+    <div className="saved-recipe">Saved Recipe</div>
   );
 }
 

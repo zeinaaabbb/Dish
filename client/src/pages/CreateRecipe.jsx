@@ -1,6 +1,6 @@
 function CreateRecipe() {
   return (
-    <div>Create Recipe</div>
+    <div className="create-recipe">Create Recipe</div>
   );
 }
 

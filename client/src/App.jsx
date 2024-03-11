@@ -6,7 +6,6 @@ import CreateRecipe from './pages/CreateRecipe';
 import SavedRecipe from './pages/SavedRecipe';
 import Navbar from './components/Navbar';
 
-
 function App() {
   return (
     <div className="App">
