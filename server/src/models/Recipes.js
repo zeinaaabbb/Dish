@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const RecipeSchema = new mongoose.Schema({
   name: { type: String, required: true },
+  descriptions: [{ type: String, required: true}],
   ingredients: [{ type: String, required: true}],
   instructions: { type: String, required: true },
   imageUrl: { type: String, required: true },
@@ -9,5 +10,5 @@ const RecipeSchema = new mongoose.Schema({
   userOwner: { type: mongoose.SchemaType.ObjectId, ref: "users", required: true }
 });
 
-//Create and then export the UserModel using the UserSchema
+//Create and then export the RecipeModel using the RecipeSchema
 export const UserModel = mongoose.model("recipes" , RecipeSchema);
