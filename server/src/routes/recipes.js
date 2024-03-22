@@ -26,6 +26,21 @@ router.post("/", async(req, res) => {
   }
 });
 
+router.post("/createrecipe", async(req, res) => {
+  // console.log("request123456y", req.body);
+  const recipe = new RecipeModel(req.body);
+  try {
+    const response = await recipe.save();
+    console.log("me", response)
+    res.json(response)
+    // send back to /recipes
+  } catch (err) {
+    res.json(err);
+  }
+});
+
+
+
 router.put("/", async(req, res) => {
   try {
     const recipe = await RecipeModel.findById(req.body.recipeID)
