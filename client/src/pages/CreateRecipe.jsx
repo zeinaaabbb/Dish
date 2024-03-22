@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 function CreateRecipe() {
 
@@ -31,9 +32,19 @@ function CreateRecipe() {
 
   // console.log(recipe);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:3001/recipes",recipe)
+      alert("recipe created!");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="create-recipe">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Create Your Recipe</h2>
         <label htmlFor="name">Name:</label>
         <input type="text" name="name" id="name" onChange={handleChange}/>
@@ -62,7 +73,7 @@ function CreateRecipe() {
         <label htmlFor="cookingTime">Cooking Time:</label>
         <input type="number" name="cookingTime" id="cookingTime" onChange={handleChange}/>
 
-        <button type="submit">create</button>
+        <button type="submit" >create</button>
       </form>
 
     </div>
