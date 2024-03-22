@@ -20,7 +20,6 @@ app.use("/recipes", recipesRouter);
 
 
 // MongoDB connection
-// console.log(process.env.mongoDB);
 mongoose.connect(process.env.mongoDB);
 
 app.listen(3001, () => console.log("SERVER STARTED!"));

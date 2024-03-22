@@ -4,13 +4,12 @@ import axios from 'axios';
 import { useGetUserID} from '../hooks/useGetUserID'
 
 function CreateRecipe() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const userID = useGetUserID();
-  // console.log(userID);
 
   const [recipe, setRecipe] = useState({
     name : "",
-    description: "" ,
+    descriptions: "" ,
     ingredients: [],
     instruction: "",
     imageUrl: "",
@@ -18,12 +17,8 @@ function CreateRecipe() {
     userOwner: userID,
   });
 
-
-
   const handleChange = (event) => {
     const { name, value } = event.target;
-    // console.log("Name:", name);
-    // console.log("Value:", value);
     setRecipe({ ...recipe, [name]: value });
   };
 
@@ -37,12 +32,10 @@ function CreateRecipe() {
     setRecipe({ ...recipe, ingredients: newIngredients });
   };
 
-  // console.log(recipe);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/recipes", recipe)
+      const response = await axios.post("http://localhost:3001/recipes/createrecipe", recipe)
       alert("recipe created!");
       navigate("/");
     } catch (err) {
@@ -57,8 +50,8 @@ function CreateRecipe() {
         <label htmlFor="name">Name:</label>
         <input type="text" name="name" id="name" onChange={handleChange}/>
 
-        <label htmlFor="description">Description:</label>
-        <textarea name="description" id="description" onChange={handleChange}></textarea>
+        <label htmlFor="descriptions">Descriptions:</label>
+        <textarea name="descriptions" id="descriptions" onChange={handleChange}></textarea>
 
         <label htmlFor="ingredients">Ingredients:</label>
         {recipe.ingredients.map((ingredient, index) => (
