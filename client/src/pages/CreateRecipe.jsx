@@ -6,7 +6,6 @@ import { useGetUserID} from '../hooks/useGetUserID'
 function CreateRecipe() {
   const navigate = useNavigate();
   const userID = useGetUserID();
-  // console.log(userID);
 
   const [recipe, setRecipe] = useState({
     name : "",
@@ -20,8 +19,6 @@ function CreateRecipe() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    // console.log("Name:", name);
-    // console.log("Value:", value);
     setRecipe({ ...recipe, [name]: value });
   };
 
@@ -35,16 +32,11 @@ function CreateRecipe() {
     setRecipe({ ...recipe, ingredients: newIngredients });
   };
 
-  // console.log(recipe);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:3001/recipes/createrecipe", recipe)
-
       alert("recipe created!");
-      console.log("response frontend", response)
-      // console.log("recipe", recipe);
       navigate("/");
     } catch (err) {
       console.log(err);
