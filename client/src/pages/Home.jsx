@@ -20,6 +20,9 @@ useEffect(() => {
 
 });
 
+  const saveRecipe = async(recipeID) => {
+
+  }
 
   return (
     <div>
@@ -29,6 +32,7 @@ useEffect(() => {
             <li key={recipe._id}>
             <div>
               <h1>{recipe.name}</h1>
+              <button onClick={() => {saveRecipe(recipe._id)}}>Save</button>
             </div>
             <div>
               <p> {recipe.descriptions}</p>
@@ -39,7 +43,7 @@ useEffect(() => {
             <img src={recipe.imageUrl} alt={recipe.name}/>
             <p>Cooking Time: {recipe.cookingTime} (mins)</p>
             </li>
-          ))};
+          ))}
           </ul>
       </div>
   );
