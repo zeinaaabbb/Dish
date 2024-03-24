@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useGetUserID} from "../hooks/useGetUserID"
 
@@ -10,33 +10,27 @@ const [ recipes, setRecipes ] = useState([]);
 const [ savedRecipes, setSavedRecipes ] = useState([]);
 
 useEffect(() => {
-    const fetchRecipe = async () => {
+    const fetchRecipes = async () => {
       try {
         const result = await axios.get("http://localhost:3001/recipes");
         setRecipes(result.data);
-        // console.log(result.data);
       } catch (err) {
         console.log(err);
       }
     }
 
-    fetchRecipe();
 
-    const fetchSavedRecipe = async() => {
+    const fetchSavedRecipes = async() => {
       try {
-        const result = await axios.get(`http://localhost:3001/recipes/savedrecipes/ids/${userID}`, {
-          userID
-        });
+        const result = await axios.get(`http://localhost:3001/recipes/savedrecipes/ids/${userID}`);
         setSavedRecipes(result.data.saveRecipes);
-        // console.log(result.data);
       } catch (err) {
         console.log(err);
-      }
-    }
+      }};
 
-    fetchSavedRecipe();
-
-});
+    fetchRecipes();
+    fetchSavedRecipes();
+}, []);
 
 const saveRecipe = async(recipeID) => {
   try {
@@ -44,12 +38,13 @@ const saveRecipe = async(recipeID) => {
       userID,
       recipeID
     });
-    // setSavedRecipes(result.data);
-    console.log(result.data);
+    setSavedRecipes(result.data.savedRecipes);
   } catch (err) {
     console.log(err);
   }
+
 }
+const isRecipeSaved = (id) => savedRecipes && savedRecipes.includes(id);
 
 
   return (
@@ -60,7 +55,12 @@ const saveRecipe = async(recipeID) => {
             <li key={recipe._id}>
             <div>
               <h1>{recipe.name}</h1>
-              <button onClick={() =>{saveRecipe(recipe._id)}}>Save</button>
+              <button
+                onClick={() => saveRecipe(recipe._id)}
+                disabled={isRecipeSaved(recipe._id)}
+              >
+                  {isRecipeSaved(recipe._id)? "Saved" : "Save" }
+              </button>
             </div>
             <div>
               <p> {recipe.descriptions}</p>
