@@ -21,7 +21,7 @@ useEffect(() => {
 
   return (
     <div>
-        <h1>Saved Recipes</h1>
+        <h1>Saved recipes</h1>
         <ul>
           {savedRecipes.map((recipe) => (
             <li key={recipe._id}>
