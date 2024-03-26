@@ -4,8 +4,6 @@ import axios from 'axios';
 import {useCookies} from "react-cookie";
 import {useNavigate} from "react-router-dom";
 
-import styles from "./Auth.module.css";
-
 
 function Auth() {
   return (
@@ -48,7 +46,7 @@ const Login = () => {
       setUsername={setUsername}
       password={password}
       setPassword={setPassword}
-      label="Login"
+      label="Log in"
       onSubmit={onSubmit}
     />
   );
@@ -100,8 +98,8 @@ const Form = ({
 }) => {
   return(
     <div className="auth-container">
-      <form onSubmit={onSubmit}>
-        <div className="content">
+      <form onSubmit={onSubmit} className="form-container">
+        <div className="auth-content">
         <h2>{label}</h2>
         <div className="form-group">
           <label htmlFor="username"> Username: </label>
@@ -119,7 +117,7 @@ const Form = ({
             value={password}
             onChange={(event) => setPassword(event.target.value)} />
         </div>
-        <button type="submit">{label}</button>
+        <button type="submit" class="auth-btn">{label}</button>
         </div>
       </form>
   </div>

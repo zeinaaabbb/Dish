@@ -44,9 +44,10 @@ function CreateRecipe() {
   };
 
   return (
-    <div className="create-recipe">
-      <form onSubmit={handleSubmit}>
-        <h2>Create Your Recipe</h2>
+    <div className="create-container">
+      <form onSubmit={handleSubmit} className="create-form">
+      <div className="group-input">
+        <h2>Your recipe.</h2>
         <label htmlFor="name">Name:</label>
         <input type="text" name="name" id="name" onChange={handleChange}/>
 
@@ -63,7 +64,7 @@ function CreateRecipe() {
             onChange={ (event) => handleIngredientChange(event, index) }
           />
         ))}
-        <button type="button" onClick={handleAddIngredient}>+</button>
+        <button type="button" onClick={handleAddIngredient} className="create-btn">+</button>
 
         <label htmlFor="instructions">Instructions:</label>
         <input type="text" name="instructions" id="instructions" onChange={handleChange}/>
@@ -71,12 +72,12 @@ function CreateRecipe() {
         <label htmlFor="imageUrl">Image Url:</label>
         <input type="text" name="imageUrl" id="imageUrl" onChange={handleChange}/>
 
-        <label htmlFor="cookingTime">Cooking Time:</label>
+        <label htmlFor="cookingTime">Cooking Time (mins):</label>
         <input type="number" name="cookingTime" id="cookingTime" onChange={handleChange}/>
 
-        <button type="submit" >create</button>
+        <button type="submit" className="create-btn" >Create</button>
+      </div>
       </form>
-
     </div>
   );
 }

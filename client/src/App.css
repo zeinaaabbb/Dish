@@ -1,6 +1,135 @@
+.App {
+  font-family: "Outfit", sans-serif;
+  background-color: #3759CD;
+  height: 100vh;
+
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #3759CD;
-  font-family: "Outfit", sans-serif;
 }
+
+/* Auth */
+.auth-container {
+  background-color: white;
+  padding-left: 10px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 10px;
+  padding-top: 1px;
+}
+
+.form-group {
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-group > label, h2 {
+  color: #3759CD;;
+}
+
+.form-group > input {
+  border-radius: 4px;
+  margin-left: 3px;
+  border-style: dashed
+}
+
+.auth-btn {
+  background-color: #3759CD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 7px;
+  width: 70px;
+  margin: 10px;
+}
+
+.auth-btn:hover {
+  background-color: #CDAB37;
+}
+
+/* Create recipe */
+
+.create-container {
+  background-color: white;
+  padding-left: 10px;
+  width: 350px;
+  height: 450px;
+  border-radius: 20px;
+  margin: 10px;
+  padding-top: 1px;
+}
+
+.create-form {
+  margin: 0 auto 1.5rem auto;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+}
+
+.group-input > input, textarea {
+  border-radius: 4px;
+  margin-left: 3px;
+  border-style: dashed;
+}
+
+.create-btn {
+  background-color: #3759CD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 7px;
+  width: 70px;
+  margin: 10px;
+}
+
+.create-btn:hover {
+  background-color: #CDAB37;
+}
+
+.group-input > label, h2 {
+  color: #3759CD;;
+}
+
+.group-input {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Saved */
+
+
+/* home */
+
+/* img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 400px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+} */
