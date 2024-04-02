@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { useGetUserID} from '../hooks/useGetUserID'
+import styles from "./CreateRecipe.module.css"
+import { useGetUserID} from '../../hooks/useGetUserID'
 
 function CreateRecipe() {
   const navigate = useNavigate();
@@ -44,9 +45,9 @@ function CreateRecipe() {
   };
 
   return (
-    <div className="create-container">
-      <form onSubmit={handleSubmit} className="create-form">
-      <div className="group-input">
+    <div className={styles.createcontainer}>
+      <form onSubmit={handleSubmit} className={styles.createform}>
+      <div className={styles.groupinput}>
         <h2>Your recipe.</h2>
         <label htmlFor="name">Name:</label>
         <input type="text" name="name" id="name" onChange={handleChange}/>
@@ -64,7 +65,7 @@ function CreateRecipe() {
             onChange={ (event) => handleIngredientChange(event, index) }
           />
         ))}
-        <button type="button" onClick={handleAddIngredient} className="create-btn">+</button>
+        <button type="button" onClick={handleAddIngredient} className={styles.createbtn}>+</button>
 
         <label htmlFor="instructions">Instructions:</label>
         <input type="text" name="instructions" id="instructions" onChange={handleChange}/>
@@ -75,7 +76,7 @@ function CreateRecipe() {
         <label htmlFor="cookingTime">Cooking Time (mins):</label>
         <input type="number" name="cookingTime" id="cookingTime" onChange={handleChange}/>
 
-        <button type="submit" className="create-btn" >Create</button>
+        <button type="submit" className={styles.createbtn} >Create</button>
       </div>
       </form>
     </div>

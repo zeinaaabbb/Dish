@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "./pages/Home";
-import Auth  from "./pages/Auth";
-import CreateRecipe from './pages/CreateRecipe';
-import SavedRecipe from './pages/SavedRecipe';
+import Home from "./pages/Home/Home";
+import Auth  from "./pages/Auth/Auth";
+import CreateRecipe from './pages/Create Recipe/CreateRecipe';
+import SavedRecipe from './pages/Saved Recipe/SavedRecipe';
 import Navbar from './components/Navbar';
 
 function App() {

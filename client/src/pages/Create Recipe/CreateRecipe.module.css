@@ -1,0 +1,50 @@
+.createcontainer {
+  background-color: white;
+  padding-left: 10px;
+  width: 350px;
+  height: 450px;
+  border-radius: 20px;
+  margin: 10px;
+  padding-top: 1px;
+}
+
+.createform {
+  margin: 0 auto 1.5rem auto;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+}
+
+.groupinput > input, textarea {
+  border-radius: 4px;
+  margin-left: 3px;
+  border-style: dashed;
+}
+
+.createbtn {
+  background-color: #3759CD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 7px;
+  width: 70px;
+  margin: 10px;
+}
+
+.createbtn:hover {
+  background-color: #CDAB37;
+}
+
+.groupinput > label, h2 {
+  color: #3759CD;;
+}
+
+.groupinput {
+  display: flex;
+  flex-direction: column;
+}
