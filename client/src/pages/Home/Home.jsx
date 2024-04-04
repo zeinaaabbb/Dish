@@ -49,32 +49,37 @@ const isRecipeSaved = (id) => savedRecipes && savedRecipes.includes(id);
 
 
   return (
-    <div>
-        <h1>Recipes</h1>
-        <ul>
-          {recipes.map((recipe) => (
-            <li key={recipe._id}>
-            <div>
-              <h1>{recipe.name}</h1>
-              <button
-                onClick={() => saveRecipe(recipe._id)}
-                disabled={isRecipeSaved(recipe._id)}
-              >
-                  {isRecipeSaved(recipe._id)? "Saved" : "Save" }
-              </button>
-            </div>
-            <div>
-              <p> {recipe.descriptions}</p>
-            </div>
-            <div>
-            <p> {recipe.instructions}</p>
-            </div>
-            <img src={recipe.imageUrl} alt={recipe.name}/>
-            <p>Cooking Time: {recipe.cookingTime} (mins)</p>
-            </li>
-          ))}
-          </ul>
-      </div>
+    <div className={styles.recipecontainer}>
+        <div className={styles.heading}>
+          <h1>Where your Recipes come to Life</h1>
+          <h4>Savour Every Bite, Save Every Recipe</h4>
+        </div>
+        <div>
+
+        <h1 className={styles.maintitle}>Recipe Dish</h1>
+        </div>
+
+        <div className={styles.recipelist}>
+        {recipes.map((recipe) => (
+          <div className={styles.recipegroup}>
+                <div className={styles.topsection}>
+                  <h2 className={styles.recipename} key={recipe._id}>{recipe.name}</h2>
+                  <button
+                    onClick={() => saveRecipe(recipe._id)}
+                    disabled={isRecipeSaved(recipe._id)}
+                    className={styles.saverecipebtn}
+                  >
+                      {isRecipeSaved(recipe._id)? "Saved" : "Save" }
+                  </button>
+                </div>
+                  <p>{recipe.descriptions}</p>
+                  <p> <strong>Instructions:  </strong>{recipe.instructions}</p>
+                  <img className={styles.recipeimage} src={recipe.imageUrl} alt={recipe.name}/>
+                <p><strong>Cooking Time: </strong>{recipe.cookingTime} (mins)</p>
+          </div>
+              ))}
+        </div>
+    </div>
   );
 }
 

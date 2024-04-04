@@ -21,27 +21,25 @@ useEffect(() => {
 
 
   return (
-    <div>
-        <h1>Saved recipes</h1>
-        <ul>
-          {savedRecipes.map((recipe) => (
-            <li key={recipe._id}>
-            <div>
-              <h1>{recipe.name}</h1>
+    <div className={styles.recipecontainer}>
+    <h1 className={styles.maintitle}>Saved recipes</h1>
+    <div className={styles.recipelist}>
+    {savedRecipes.map((recipe) => (
+      <div className={styles.recipegroup}>
+            <div className={styles.topsection}>
+              <h2 className={styles.recipename} key={recipe._id}>{recipe.name}</h2>
             </div>
-            <div>
-              <p> {recipe.descriptions}</p>
-            </div>
-            <div>
-            <p> {recipe.instructions}</p>
-            </div>
-            <img src={recipe.imageUrl} alt={recipe.name}/>
-            <p>Cooking Time: {recipe.cookingTime} (mins)</p>
-            </li>
-          ))}
-          </ul>
+              <p>{recipe.descriptions}</p>
+              <p> <strong>Instructions:  </strong>{recipe.instructions}</p>
+              <img className={styles.recipeimage} src={recipe.imageUrl} alt={recipe.name}/>
+            <p><strong>Cooking Time: </strong>{recipe.cookingTime} (mins)</p>
       </div>
-  );
+          ))}
+    </div>
+</div>
+)
+
+
 }
 
 export default SavedRecipe

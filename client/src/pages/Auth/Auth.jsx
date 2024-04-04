@@ -99,9 +99,9 @@ const Form = ({
 }) => {
   return(
     <div className={styles.authcontainer}>
-      <form onSubmit={onSubmit} className="form-container">
-        <div className="auth-content">
-        <h2>{label}</h2>
+      <form onSubmit={onSubmit}>
+        <div className={styles.authcontent}>
+          <h2 className={styles.labelh2}>{label}</h2>
         <div className={styles.formgroup}>
           <label htmlFor="username"> Username: </label>
           <input

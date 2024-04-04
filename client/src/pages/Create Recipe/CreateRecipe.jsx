@@ -48,7 +48,7 @@ function CreateRecipe() {
     <div className={styles.createcontainer}>
       <form onSubmit={handleSubmit} className={styles.createform}>
       <div className={styles.groupinput}>
-        <h2>Your recipe.</h2>
+        <h2>Create your Recipe</h2>
         <label htmlFor="name">Name:</label>
         <input type="text" name="name" id="name" onChange={handleChange}/>
 

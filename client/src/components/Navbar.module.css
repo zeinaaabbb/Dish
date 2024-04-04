@@ -12,9 +12,25 @@
   margin: '0 10px',
 }
 
-.navLink-logo {
+.navLinklogo {
   font-size: 4em;
   color: white;
   text-decoration: none;
   margin: '0 10px',
+}
+
+.logoutbtn{
+  border-radius: none;
+  background-color: none;
+  color: black;
+  border: none;
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.logoutbtn:hover {
+  background-color: #CDAB37 ;
+  color: white;
 }
