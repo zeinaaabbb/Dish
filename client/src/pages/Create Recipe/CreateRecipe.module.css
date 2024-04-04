@@ -1,0 +1,46 @@
+.createcontainer {
+  justify-content: center;
+  background-color: white;
+  max-width: 400px;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.create-recipe form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.groupinput > input, textarea {
+  border-radius: 4px;
+  margin-left: 3px;
+  border-style: dashed;
+}
+
+.createbtn {
+  background-color: #3759CD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 4px;
+  width: 70px;
+  margin: 10px;
+}
+
+.createbtn:hover {
+  background-color: #CDAB37;
+}
+
+.groupinput > label, h2 {
+  color: #3759CD;;
+}
+
+.groupinput {
+  display: flex;
+  flex-direction: column;
+}
